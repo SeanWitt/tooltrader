@@ -1,5 +1,6 @@
 <h1>Welcome</h1>
 
 
-<%= button_to "Lend", action: new_tool_path %>
+<%= button_to "Lend", new_tool_path, method: :get %>
+<%= button_to "Borrow", "/nearby" , method: :get %>
 
