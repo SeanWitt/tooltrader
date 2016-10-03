@@ -4,4 +4,8 @@ class ToolsController < ApplicationController
     @tools = Tool.all
   end
 
+  def new
+  end
+
+
 end
