@@ -5,7 +5,7 @@ class Tools < ActiveRecord::Migration[5.0]
       t.string :make
       t.string :model
       t.integer :type_id
-      t.interger :user_id
+      t.integer :user_id
 
       t.timestamps
     end
