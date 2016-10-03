@@ -11,9 +11,9 @@
   <body>
     <a href="/">Home</a>
 
-    <% if session[:user_id] %>
-      <a href="/logout">Logout</a>
-      <a href="/user/<%= session[:user_id] %>">Profile</a>
+    <% if session[:id] %>
+      <%= link_to "Logout", logout_path, method: :delete %>
+      <a href="/user/<%= session[:id] %>">Profile</a>
     <% else %>
       <a href="/login">Login</a>
       <a href="/signup">Sign Up</a>
