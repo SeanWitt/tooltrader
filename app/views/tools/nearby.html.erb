@@ -1,0 +1,8 @@
+<h2> Tools Near You </h2>
+
+<% @tools.each do |tool| %>
+  <p><%= tool.type.name %><br>
+    <%= tool.display_name %><br>
+    <%= tool.make %><br>
+  </p>
+<% end  %>
