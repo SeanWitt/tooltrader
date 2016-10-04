@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get '/sign-up' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
   get 'nearby' => 'tools#nearby'
 end
