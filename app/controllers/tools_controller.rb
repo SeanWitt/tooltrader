@@ -5,6 +5,7 @@ class ToolsController < ApplicationController
   end
 
   def new
+    @tool = Tool.create
   end
 
   def nearby
