@@ -1,6 +1,6 @@
 <% if @tools_nearby.length > 0 %>
 
-  <%= @tools_nearby.each do |tool| %>
+  <% @tools_nearby.each do |tool| %>
     <div>
       <p><%= tool.display_name %></p>
       <p><%= tool.make %></p>
