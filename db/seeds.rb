@@ -6,9 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@type1 = Type.create(name: "Hammer")
-@type2 = Type.create(name: "Saw")
-@type3 = Type.create(name: "Power Washer")
+
+@type1 = Type.create(name: "Power Tools")
+@type2 = Type.create(name: "Lawn Care Tools")
+@type3 = Type.create(name: "Automotive")
+@type4 = Type.create(name: "Demolition")
+@type5 = Type.create(name: "Heavy Machinery")
+@type6 = Type.create(name: "Cleaning Tools")
+@type7 = Type.create(name: "Electrical")
+@type8 = Type.create(name: "Household Tools")
+@type9 = Type.create(name: "Misc Parts")
+
+
 
 @user1 = User.create(name: "Sean Witt", password: "password", email: "sean@sean.com", address: "1783 Ohlen Rd, Austin TX 78757")
 @user2 = User.create(name: "Tom Ho", password: "password", email: "tom@tom.com", address: "1705 Guadalupe, Austin TX 78717")
