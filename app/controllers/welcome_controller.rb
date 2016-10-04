@@ -1,6 +1,11 @@
 
 class WelcomeController < ApplicationController
   def index
-    @type = Type.all
+    if !current_user
+      redirect_to action: 'landing'
+    end
+  end
+
+  def landing
   end
 end
