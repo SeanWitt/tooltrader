@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+$(document).ready(function () {
+  $('.borrow-button').on("click", function(event) {
+  event.preventDefault()
+  console.log(this)
+  $('.borrow-button').closest('div').find('.hidden-button').removeClass('hidden-button')
+  console.log("this worked")
+  });
+});
+
