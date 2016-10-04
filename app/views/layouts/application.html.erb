@@ -13,7 +13,7 @@
 
     <% if session[:id] %>
       <%= link_to "Logout", logout_path, method: :delete %>
-      <a href="/user/<%= session[:id] %>">Profile</a>
+      <a href="/users/<%= session[:id] %>">Profile</a>
     <% else %>
       <a href="/login">Login</a>
       <a href="/signup">Sign Up</a>
