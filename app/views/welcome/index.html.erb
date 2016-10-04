@@ -5,11 +5,12 @@
 </div>
 
 <div>
-  <%= button_to "Borrow", "/nearby", method: :get %>
-
-  <%= form_tag('/types/search', method: :post) do %>
-    <%= text_field_tag "name" %>
-    <%= submit_tag "Search Types" %>
+  <%= button_to "Borrow", "/nearby", method: :get, class: "borrow-button" %>
+  <div class="hidden-button">
+    <%= form_tag('/types/search', method: :post) do %>
+      <%= text_field_tag "name" %>
+      <%= submit_tag "Search Types" %>
+  </div>
   <% end %>
 </div>
 
