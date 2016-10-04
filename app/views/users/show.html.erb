@@ -1,8 +1,14 @@
 <% if @tools.length > 0 %>
   <h3>Your Tools</h3>
   <% @tools.each do |tool| %>
-    <p><%= tool.display_name %></p>
+    <div class='card card-inverse card-primary'>
+      <h4 class='card-title'><%= tool.type.name %></h4>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= tool.display_name %></li>
+        <li class="list-group-item"><%= tool.make %></li>
+        <li class="list-group-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+      </ul>
+    </div>
   <% end %>
 <% end %>
-
 
