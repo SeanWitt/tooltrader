@@ -8,8 +8,9 @@ class ToolsController < ApplicationController
   end
 
   def nearby
-    nearby_users = current_user.nearby_users(10)
+    nearby_users = current_user.nearby_users(15)
     @tools = nearby_users.flat_map { |user| user.tools }
+    # binding.pry
   end
 
 end

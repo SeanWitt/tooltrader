@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :types
   resources :users
 
+
+  post 'types/search' => 'types#search'
   get '/sign-up' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
