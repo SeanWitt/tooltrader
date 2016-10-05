@@ -13,7 +13,7 @@
 @user1 = User.create(name: "Sean Witt", password: "password", email: "sean@sean.com", address: "1783 Ohlen Rd, Austin TX 78757")
 @user2 = User.create(name: "Tom Ho", password: "password", email: "tom@tom.com", address: "1705 Guadalupe, Austin TX 78717")
 
-@hammer = Tool.create(display_name: "Hammer", make: "acme", model: "The anihilator", type_id: 1, user_id: 1 )
-@saw = Tool.create(display_name: "Saw", make: "acme", model: "Turbo Saw 3000", type_id: 2, user_id: 1 )
-@power_washer = Tool.create(display_name: "Power Washer", make: "acme", model: "x4753 hybrid flex", type_id: 3, user_id: 2 )
+@hammer = Tool.create(display_name: "Hammer", make: "acme", tool_model: "The anihilator", type_id: 1, user_id: 1, description: "Just about the best hammer out there. It's got a few dents but it'll hit any nail on the head" )
+@saw = Tool.create(display_name: "Saw", make: "acme", tool_model: "Turbo Saw 3000", type_id: 2, user_id: 1, description: "It will cut just about anything in half" )
+@power_washer = Tool.create(display_name: "Power Washer", make: "acme", tool_model: "x4753 hybrid flex", type_id: 3, user_id: 2, description: "It honestly doesnt work that well which is why I'm willing to lend it" )
 
