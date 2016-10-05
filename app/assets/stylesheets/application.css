@@ -27,3 +27,7 @@
 .welcome-button {
   height: 100px;
 }
+.register-form {
+  border: 1px solid grey;
+  padding: 10%;
+}
