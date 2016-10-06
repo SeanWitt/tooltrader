@@ -4,6 +4,9 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
 
   has_many :tools
+  has_many :authored_reviews, class_name: "Review", foreign_key: "author_id"
+  has_many :received_reviews, class_name: "Review", foreign_key: "recipient_id"
+
   has_secure_password
 
   #geocode
