@@ -15,9 +15,9 @@
         <% end %>
 
         <% if tool.hidden == false %>
-          <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}" %>
+          <%= button_to "Make Inactive", action="/tools/hide/#{tool.id}" %>
         <% else %>
-          <%= button_to "Show to Borrowers", action="/tools/unhide/#{tool.id}" %>
+          <%= button_to "Re-Activate", action="/tools/unhide/#{tool.id}" %>
         <% end %>
 
         <%= button_to 'Destroy', "/tools/#{tool.id}",
