@@ -20,6 +20,31 @@ class ToolsController < ApplicationController
     # binding.pry
   end
 
+  def hide
+    @tool = Tool.find(params[:id])
+    @tool.hidden = true
+  end
+
+  def show_tool
+    @tool = Tool.find(params[:id])
+    @tool.hidden = false
+  end
+
+  def loan
+    @tool = Tool.find(params[:id])
+    @tool.loaned = true
+  end
+
+  def return_loan
+    @tool = Tool.find(params[:id])
+    @tool.loaned = false
+  end
+
+  def destroy
+    @tool = Tool.find(params[:id])
+    @tool.destory
+  end
+
   private
 
   def tool_params

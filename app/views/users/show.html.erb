@@ -8,6 +8,9 @@
         <li class="list-group-item"><%= tool.make %></li>
         <li class="list-group-item"><%= tool.tool_model %></li>
         <li class="list-group-item"><%= tool.description %></li>
+        <%= button_to "Take off Display", url: "/tools/loan_out/#{tool.id}" %>
+        <%= button_to "Hide From Borrowers", url: "/tools/hide/#{tool.id}" %>
+        <%= button_to "Delete", url: "/tools/#{tool.id}", method: :delete %>
       </ul>
     </div>
   <% end %>
