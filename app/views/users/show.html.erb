@@ -8,8 +8,18 @@
         <li class="list-group-item"><%= tool.make %></li>
         <li class="list-group-item"><%= tool.tool_model %></li>
         <li class="list-group-item"><%= tool.description %></li>
-        <%= button_to "Take off Display", action="/tools/loan_out/#{tool.id}" %>
-        <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}" %>
+        <% if tool.loaned == false %>
+          <%= button_to "Loan Out", action="/tools/loan_out/#{tool.id}" %>
+        <% else %>
+          <%= button_to "Return from Loan", action="/tools/return_loan/#{tool.id}" %>
+        <% end %>
+
+        <% if tool.hidden == false %>
+          <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}" %>
+        <% else %>
+          <%= button_to "Show to Borrowers", action="/tools/unhide/#{tool.id}" %>
+        <% end %>
+
         <%= button_to 'Destroy', "/tools/#{tool.id}",
           method: "delete", remote: true, data: { confirm: 'Are you sure?'} %>
       </ul>

@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   post '/tools/loan_out/:id' => "tools#loan"
+  post '/tools/return_loan/:id' => "tools#return_loan"
   post "/tools/hide/:id" => "tools#hide"
-  post "/tools/unhide/:id" => "tools#hide"
+  post "/tools/unhide/:id" => "tools#unhide"
 
   resources :tools
   resources :types

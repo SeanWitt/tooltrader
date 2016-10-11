@@ -30,18 +30,21 @@ class ToolsController < ApplicationController
   def unhide
     @tool = Tool.find(params[:id])
     @tool.hidden = false
+    @tool.save
     redirect_to user_path(current_user)
   end
 
   def loan
     @tool = Tool.find(params[:id])
     @tool.loaned = true
+    @tool.save
     redirect_to user_path(current_user)
   end
 
   def return_loan
     @tool = Tool.find(params[:id])
     @tool.loaned = false
+    @tool.save
     redirect_to user_path(current_user)
   end
 
