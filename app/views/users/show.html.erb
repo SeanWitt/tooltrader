@@ -8,9 +8,10 @@
         <li class="list-group-item"><%= tool.make %></li>
         <li class="list-group-item"><%= tool.tool_model %></li>
         <li class="list-group-item"><%= tool.description %></li>
-        <%= button_to "Take off Display", url: "/tools/loan_out/#{tool.id}" %>
-        <%= button_to "Hide From Borrowers", url: "/tools/hide/#{tool.id}" %>
-        <%= button_to "Delete", url: "/tools/#{tool.id}", method: :delete %>
+        <%= button_to "Take off Display", action="/tools/loan_out/#{tool.id}" %>
+        <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}" %>
+        <%= button_to 'Destroy', "/tools/#{tool.id}",
+          method: "delete", remote: true, data: { confirm: 'Are you sure?'} %>
       </ul>
     </div>
   <% end %>

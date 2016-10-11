@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#index'
 
-  get '/tools/loan_out/:id' => "tools#loan"
+  post '/tools/loan_out/:id' => "tools#loan"
+  post "/tools/hide/:id" => "tools#hide"
+  post "/tools/unhide/:id" => "tools#hide"
 
   resources :tools
   resources :types
