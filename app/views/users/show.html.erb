@@ -1,4 +1,8 @@
-<h3>Your Tools</h3>
+<h3><%= @user.name %>'s Tools</h3>
+<% if current_user != @user %>
+  <%= button_to "Leave Review for #{@user.name}", new_user_review_path(@user.id) , method: "get" %>
+<% end %>
+
 <% if @tools.length > 0 %>
   <% @tools.each do |tool| %>
     <div class='card card-inverse card-primary'>
@@ -28,5 +32,13 @@
       </ul>
     </div>
   <% end %>
+<% end %>
+
+<% if @reviews.length > 0 %>
+  <% @reviews.each do |review| %>
+    <div><%= review.author.name + "'s Review: " %></div>
+    <div><%= review.review %></div>
+    <div>Rating: <%= review.rating %></div><br>
+  <% end  %>
 <% end %>
 
