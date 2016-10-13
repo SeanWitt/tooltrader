@@ -32,6 +32,7 @@
 <% end %>
 
 <% if @reviews.length > 0 %>
+  <div><%= "Overall Rating: " + @rating_average.to_s %></div><br>
   <% @reviews.each do |review| %>
     <div><%= review.author.name + "'s Review: " %></div>
     <div><%= review.review %></div>
