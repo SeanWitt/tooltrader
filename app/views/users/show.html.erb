@@ -31,3 +31,11 @@
   <% end %>
 <% end %>
 
+<% if @reviews.length > 0 %>
+  <% @reviews.each do |review| %>
+    <div><%= review.author.name + "'s Review: " %></div>
+    <div><%= review.review %></div>
+    <div>Rating: <%= review.rating %></div><br>
+  <% end  %>
+<% end %>
+
