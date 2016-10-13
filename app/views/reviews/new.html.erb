@@ -1,0 +1,20 @@
+<div class='register-form'>
+  <form method='post' action='/users/<%= @recipient %>/reviews'  >
+    <div class='form-group row'>
+      <label for='review' class='col-xs-2 col-form-label'>Review</label>
+      <div class='col-xs-10'>
+        <textarea class='form-control' type="text" name="review" rows="6"></textarea>
+        <label for='rating' class='col-xs-2 col-form-label'>Rating</label>
+        <select name="rating">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+
+        </select>
+      </div>
+    </div>
+    <button typ='submit' class='btn btn-primary'>Leave Review</button>
+  </form>
+</div>

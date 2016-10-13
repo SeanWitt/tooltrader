@@ -1,11 +1,17 @@
 class ReviewsController < ApplicationController
 
   def new
+    @recipient = params[:user_id]
     @review = Review.new
+
   end
 
   def create
-    @review = Review.create(review_params)
+    p params
+    p " _______________________"
+    @review = Review.create(review: params[:review],rating: params[:rating], recipient_id: params[:user_id],  author_id: current_user.id)
+    p @review.errors
+    redirect_to user_path(current_user)
   end
 
   def show
