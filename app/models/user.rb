@@ -20,4 +20,17 @@ class User < ApplicationRecord
   def nearby_users(distance)
     User.near(self.address, distance) - [self]
   end
+
+  def overall_rating(user)
+    all_ratings = []
+    review_array = Review.where(recipient_id: user.id)
+    p review_array
+    review_array.each do |review|
+      all_ratings << review.rating
+    end
+
+    all_ratings.reduce(:+) / all_ratings.length
+
+  end
+
 end
