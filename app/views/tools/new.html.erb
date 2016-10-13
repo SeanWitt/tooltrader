@@ -1,9 +1,10 @@
 <h5>Add a new to tool to loan</h5>
 <%= form_for @tool do |f| %>
-  <%= f.text_field :display_name, placeholder: "Display Name" %><br>
-  <%= f.text_field :make, placeholder: "make" %><br>
-  <%= f.text_field :description, placeholder: "description" %><br>
-  <%= select_tag(:type_id, options_for_select([
+  <p><%= f.text_field :display_name, placeholder: "Display Name" %></p>
+  <p><%= f.text_field :make, placeholder: "make" %></p>
+  <p><%= f.text_field :tool_model, placeholder: "model" %></p>
+  <p><%= f.text_field :description, placeholder: "description" %></p>
+  <p><%= select_tag(:type_id, options_for_select([
     ['Power Tools', 1],
     ['Lawn Care Tools', 2],
     ["Automotive", 3],
@@ -13,7 +14,7 @@
     ["Electrical", 7],
     ["Household Tools", 8],
     ["Misc Parts", 9]
-    ])) %><br>
+    ])) %></p>
   <%= submit_tag "Submit" %>
 <% end %>
 
