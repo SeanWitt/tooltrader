@@ -1,6 +1,6 @@
 <h3><%= @user.name %>'s Tools</h3>
 <% if current_user != @user %>
-  <%= button_to "Leave Review for #{@user.name}", new_review_path, :method => :get %>
+  <%= button_to "Leave Review for #{@user.name}", new_user_review_path(@user.id) , method: "get" %>
 <% end %>
 
 <% if @tools.length > 0 %>

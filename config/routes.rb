@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 
   resources :tools
   resources :types
-  resources :users
-  resources :reviews
+  resources :users do
+    resources :reviews
+  end
+
 
 
   post 'types/search' => 'types#search'
