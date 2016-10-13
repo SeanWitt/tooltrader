@@ -1,4 +1,8 @@
-<h3>Your Tools</h3>
+<h3><%= @user.name %>'s Tools</h3>
+<% if current_user != @user %>
+  <%= button_to "Leave Review for #{@user.name}", new_review_path, :method => :get %>
+<% end %>
+
 <% if @tools.length > 0 %>
   <% @tools.each do |tool| %>
     <div class='card card-inverse card-primary'>
