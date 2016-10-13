@@ -10,8 +10,8 @@ class ToolsController < ApplicationController
 
   def create
     param = params["tool"]
-    @tool = Tool.create(display_name: param["display_name"], make: param["make"], type_id: params["type_id"], description: param["description"], user_id: current_user.id)
-    p @tool
+    @tool = Tool.create(display_name: param["display_name"], make: param["make"], tool_model: param["tool_model"], type_id: params["type_id"], description: param["description"], user_id: current_user.id)
+    p @tool.errors
     redirect_to user_path(current_user)
   end
 

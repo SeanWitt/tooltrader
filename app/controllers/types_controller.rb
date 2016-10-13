@@ -12,18 +12,18 @@ class TypesController < ApplicationController
     @tools.each do |tool|
       if tool.display_name.downcase.include?(keyword)
         @tools_nearby[:p1] << tool
-      elsif tool.type.name.downcase.inlcude?(keyword)
+      elsif tool.type.name.downcase.include?(keyword)
         @tools_nearby[:p2] << tool
       elsif tool.make.downcase.include?(keyword)
         @tools_nearby[:p3] << tool
-      elsif tool.tool_model.downcase.inlcude?(keyword)
+      elsif tool.tool_model.downcase.include?(keyword)
         @tools_nearby[:p4] << tool
       elsif tool.description.downcase.include?(keyword)
         @tools_nearby[:p5] << tool
       end
     end
-
-    return @tools_nearby.values.flatten
+    @tools_nearby = @tools_nearby.values.flatten
+    return @tools_nearby
   end
 
 end
