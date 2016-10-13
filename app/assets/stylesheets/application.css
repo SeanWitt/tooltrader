@@ -31,3 +31,7 @@
   border: 1px solid grey;
   padding: 10%;
 }
+form {
+  display: inline;
+}
+

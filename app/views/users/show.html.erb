@@ -8,20 +8,23 @@
         <li class="list-group-item"><%= tool.make %></li>
         <li class="list-group-item"><%= tool.tool_model %></li>
         <li class="list-group-item"><%= tool.description %></li>
+
+      <div class >
         <% if tool.loaned == false %>
-          <%= button_to "Loan Out", action="/tools/loan_out/#{tool.id}" %>
+          <%= button_to "Loan Out", action="/tools/loan_out/#{tool.id}", class: "btn btn-success" %>
         <% else %>
-          <%= button_to "Return from Loan", action="/tools/return_loan/#{tool.id}" %>
+          <%= button_to "Return from Loan", action="/tools/return_loan/#{tool.id}", class: "btn btn-success" %>
         <% end %>
 
         <% if tool.hidden == false %>
-          <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}" %>
+          <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}", class: "btn btn-warning" %>
         <% else %>
-          <%= button_to "Show to Borrowers", action="/tools/unhide/#{tool.id}" %>
+          <%= button_to "Show to Borrowers", action="/tools/unhide/#{tool.id}", class: "btn btn-success" %>
         <% end %>
 
         <%= button_to 'Destroy', "/tools/#{tool.id}",
-          method: "delete", remote: true, data: { confirm: 'Are you sure?'} %>
+          method: "delete", remote: true, data: { confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+
       </ul>
     </div>
   <% end %>
