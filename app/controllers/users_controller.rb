@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   def index
+    if current_user
+      @nearby_users = current_user.nearby_users(15)
+    else
+      redirect_to '/login'
+    end
   end
 
   def show
