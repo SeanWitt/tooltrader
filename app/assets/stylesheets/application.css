@@ -31,3 +31,13 @@
   border: 1px solid grey;
   padding: 10%;
 }
+form {
+  display: inline;
+}
+.review-button {
+  margin-bottom: 1%;
+}
+.rating-button {
+  margin-top: 2%;
+}
+

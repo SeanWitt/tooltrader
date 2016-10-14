@@ -5,16 +5,17 @@
       <div class='col-xs-10'>
         <textarea class='form-control' type="text" name="review" rows="6"></textarea>
         <label for='rating' class='col-xs-2 col-form-label'>Rating</label>
-        <select name="rating">
-          <option value=1>1</option>
-          <option value=2>2</option>
-          <option value=3>3</option>
-          <option value=4>4</option>
-          <option value=5>5</option>
-
-        </select>
+        <div class="rating">
+          <select name="rating" class="rating-button">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+          </select>
+        </div>
       </div>
     </div>
-    <button typ='submit' class='btn btn-primary'>Leave Review</button>
+    <button typ='submit' class='btn btn-success'>Leave Review</button>
   </form>
 </div>
