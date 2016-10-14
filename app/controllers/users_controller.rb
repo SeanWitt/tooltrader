@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @rating_average = @user.overall_rating(@user.id)
+    if @user.received_reviews.length > 0
+      @rating_average = @user.overall_rating(@user.id)
+    end
     @tools = @user.tools
     @reviews = Review.where(recipient_id: @user.id)
   end

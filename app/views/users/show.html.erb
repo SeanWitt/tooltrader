@@ -1,6 +1,6 @@
 <h3><%= @user.name %>'s Tools</h3>
 <% if current_user != @user %>
-  <%= button_to "Leave Review for #{@user.name}", new_user_review_path(@user.id) , method: "get" %>
+  <%= button_to "Leave Review for #{@user.name}", new_user_review_path(@user.id) , method: "get", class: "btn btn-success review-button" %>
 <% end %>
 
 <% if @tools.length > 0 %>
@@ -12,23 +12,24 @@
         <li class="list-group-item"><%= tool.make %></li>
         <li class="list-group-item"><%= tool.tool_model %></li>
         <li class="list-group-item"><%= tool.description %></li>
+        <% if @user == current_user %>
+          <div>
+            <% if tool.loaned == false %>
+              <%= button_to "Loan Out", action="/tools/loan_out/#{tool.id}", class: "btn btn-success" %>
+            <% else %>
+              <%= button_to "Return from Loan", action="/tools/return_loan/#{tool.id}", class: "btn btn-success" %>
+            <% end %>
 
-      <div class >
-        <% if tool.loaned == false %>
-          <%= button_to "Loan Out", action="/tools/loan_out/#{tool.id}", class: "btn btn-success" %>
-        <% else %>
-          <%= button_to "Return from Loan", action="/tools/return_loan/#{tool.id}", class: "btn btn-success" %>
+            <% if tool.hidden == false %>
+              <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}", class: "btn btn-warning" %>
+            <% else %>
+              <%= button_to "Show to Borrowers", action="/tools/unhide/#{tool.id}", class: "btn btn-success" %>
+            <% end %>
+
+            <%= button_to 'Destroy', "/tools/#{tool.id}",
+              method: "delete", remote: true, data: { confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+          </div>
         <% end %>
-
-        <% if tool.hidden == false %>
-          <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}", class: "btn btn-warning" %>
-        <% else %>
-          <%= button_to "Show to Borrowers", action="/tools/unhide/#{tool.id}", class: "btn btn-success" %>
-        <% end %>
-
-        <%= button_to 'Destroy', "/tools/#{tool.id}",
-          method: "delete", remote: true, data: { confirm: 'Are you sure?'}, class: "btn btn-danger" %>
-
       </ul>
     </div>
   <% end %>

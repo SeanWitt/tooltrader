@@ -34,4 +34,10 @@
 form {
   display: inline;
 }
+.review-button {
+  margin-bottom: 1%;
+}
+.rating-button {
+  margin-top: 2%;
+}
 
