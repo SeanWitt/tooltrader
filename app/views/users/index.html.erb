@@ -1,0 +1,12 @@
+
+<div>
+  <ul>
+    <% if @nearby_users.length > 0 %>
+      <% @nearby_users.each do |person| %>
+        <li><a href="/users/<%= person.id %>"><%= person.name %></a></li>
+      <% end %>
+    <% else %>
+      <p>There is no one in your area yet using tooltrader. Tell your neighbors to sign up!</p>
+    <% end %>
+  </ul>
+</div>
