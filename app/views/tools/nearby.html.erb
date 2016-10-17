@@ -2,6 +2,8 @@
 
 <% if @tools.length > 0 %>
   <% @tools.each do |tool| %>
+
+  	<% if tool.loaned == false && tool.hidden == false %>
     <div class='card card-inverse card-primary'>
       <h4 class='card-title'><%= tool.type.name %></h4>
       <ul class="list-group list-group-flush">
@@ -10,5 +12,6 @@
         <li class="list-group-item"><%= tool.tool_model %></li>
         <li class="list-group-item"><%= tool.description %></li>
         <li class="list-group-item"><a href="/users/<%= tool.user.id %>" >Owner: <%= tool.user.name %></a></li>
+    <% end %>
   <% end %>
 <% end %>  
