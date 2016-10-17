@@ -5,10 +5,10 @@
       <div class='card card-inverse card-primary'>
         <h4 class='card-title'><%= tool.type.name %></h4>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%= tool.display_name %></li>
-          <li class="list-group-item"><%= tool.make %></li>
-          <li class="list-group-item"><%= tool.tool_model %></li>
-          <li class="list-group-item"><%= tool.description %></li>
+          <li class="list-group-item"><strong><%= tool.display_name %></strong></li>
+          <li class="list-group-item"><strong>Make: </strong><%= tool.make %></li>
+          <li class="list-group-item"><strong>Model: </strong><%= tool.tool_model %></li>
+          <li class="list-group-item"><strong>Description: </strong><%= tool.description %></li>
         </ul>
       </div>
     </div>
