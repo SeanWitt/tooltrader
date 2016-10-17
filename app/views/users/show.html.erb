@@ -1,7 +1,11 @@
 <h3><%= @user.name %>'s Tools</h3>
 <% if current_user != @user %>
   <%= button_to "Leave Review for #{@user.name}", new_user_review_path(@user.id) , method: "get", class: "btn btn-success review-button" %>
+
+  <%= mail_to @user.email, "Email "+ @user.name, class: "btn btn-success review-button" %>
 <% end %>
+
+
 
 <% if @tools.length > 0 %>
   <% @tools.each do |tool| %>
