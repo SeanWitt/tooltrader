@@ -40,8 +40,9 @@ form {
 .rating-button {
   margin-top: 2%;
 }
-
 .on-loan{
   background-color: red;
 }
-
+.add-tool {
+  margin-bottom: 1%;
+}

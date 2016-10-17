@@ -5,11 +5,11 @@
   <%= mail_to @user.email, "Email "+ @user.name, class: "btn btn-success review-button", subject: "Interested in more info on borrowing a tool" %>
 <% end %>
 
-
+<%= button_to "Add a tool", new_tool_path, method: :get, class: "btn btn-success add-tool" %>
 
 <% if @tools.length > 0 %>
   <% @tools.each do |tool| %>
-    <div class='card card-inverse card-primary'>
+    <div class='card card-inverse card-primary' id="user-tool-<%= tool.id %>">
       <h4 class='card-title'><%= tool.type.name %></h4>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><strong><%= tool.display_name %></strong></li>
@@ -22,12 +22,18 @@
               <%= button_to "Loan Out", action="/tools/loan_out/#{tool.id}", class: "btn btn-success" %>
             <% else %>
               <%= button_to "Return from Loan", action="/tools/return_loan/#{tool.id}", class: "btn btn-success" %>
+                <script type="text/javascript">
+                  document.getElementById("user-tool-<%= tool.id %>").style.backgroundColor = "red"
+                </script>
             <% end %>
 
             <% if tool.hidden == false %>
               <%= button_to "Hide From Borrowers", action="/tools/hide/#{tool.id}", class: "btn btn-warning" %>
             <% else %>
               <%= button_to "Show to Borrowers", action="/tools/unhide/#{tool.id}", class: "btn btn-success" %>
+              <script type="text/javascript">
+                  document.getElementById("user-tool-<%= tool.id %>").style.backgroundColor = "grey"
+                </script>
             <% end %>
 
             <%= button_to 'Destroy', "/tools/#{tool.id}",
