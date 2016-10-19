@@ -1,8 +1,10 @@
 
 
 <% @tools.each do |tool| %>
-  <div>
-    <div><%= tool.display_name %></div>
-    <div><%= tool.make %></div>
-  </div>
+	<% if tool.loaned == false && tool.hidden == false %>
+  		<div>
+    		<div><%= tool.display_name %></div>
+    		<div><%= tool.make %></div>
+  		</div>
+  	<%end%>
 <% end %>
