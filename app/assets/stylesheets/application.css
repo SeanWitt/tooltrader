@@ -18,7 +18,7 @@
   margin-top: 2%;
 }
 .lend-borrow-head {
-  margin-top: 20%;
+  margin-top: 10%;
 }
 #type-search {
   width: 70%;
@@ -40,8 +40,9 @@ form {
 .rating-button {
   margin-top: 2%;
 }
-
 .on-loan{
   background-color: red;
 }
-
+.add-tool {
+  margin-bottom: 1%;
+}
