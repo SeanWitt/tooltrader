@@ -39,9 +39,11 @@ class ToolsController < ApplicationController
     @tool = Tool.find(params[:id])
     @tool.loaned = true
     if request.xhr? && @tool.save
-      200
-    elsif request.xhr?
-      422
+      respond_to do |format|
+        format.html { render template: :"tools/_return_loan", layout: false }
+      end
+    # elsif request.xhr?
+      # 422
     else
       redirect_to user_path(current_user)
     end

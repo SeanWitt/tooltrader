@@ -7,9 +7,11 @@ $(document).ready(function() {
       url: "/tools/loan_out/" + id,
       method: 'POST'
     })
-    .done(function() {
+    .done(function(response) {
       $("#user-tool-" + id).css("background-color","red");
       $("#user-tool-" + id + " input.btn[value='Hide From Borrowers']").remove();
+      $("#user-tool-" + id + " input.btn[value='Loan Out']").remove();
+      $("#user-tool-" + id + " div").prepend(response)
     });
   });
 });
