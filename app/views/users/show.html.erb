@@ -23,7 +23,7 @@
             <% else %>
               <%= button_to "Return from Loan", action="/tools/return_loan/#{tool.id}", class: "btn btn-success" %>
                 <script type="text/javascript">
-                  document.getElementById("user-tool-<%= tool.id %>").style.backgroundColor = "red"
+                  document.getElementById("user-tool-<%= tool.id %>").style.backgroundColor = "red";
                 </script>
             <% end %>
 
@@ -34,6 +34,18 @@
               <script type="text/javascript">
                   document.getElementById("user-tool-<%= tool.id %>").style.backgroundColor = "grey"
                 </script>
+            <% end %>
+
+            <% if tool.loaned == true %>
+              <script type="text/javascript">
+                $("#user-tool-<%= tool.id %> input.btn[value='Hide From Borrowers']").remove();
+              </script>
+            <% end %>
+
+            <% if tool.hidden == true %>
+              <script type="text/javascript">
+                $("#user-tool-<%= tool.id %> input.btn[value='Loan Out']").remove();
+              </script>
             <% end %>
 
             <%= button_to 'Destroy', "/tools/#{tool.id}",
