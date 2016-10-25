@@ -38,8 +38,13 @@ class ToolsController < ApplicationController
   def loan
     @tool = Tool.find(params[:id])
     @tool.loaned = true
-    @tool.save
-    redirect_to user_path(current_user)
+    if request.xhr? && @tool.save
+      200
+    elsif request.xhr?
+      422
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def return_loan
